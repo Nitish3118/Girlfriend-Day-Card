@@ -1,0 +1,389 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap');
+
+@layer base {
+  body {
+    font-family: 'Inter', sans-serif;
+  }
+  
+  .font-serif {
+    font-family: 'Playfair Display', serif;
+  }
+}
+
+/* Floating Hearts Animation */
+.floating-hearts {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.floating-heart {
+  position: absolute;
+  animation: float 12s infinite linear;
+  opacity: 0.3;
+}
+
+.heart-1 { left: 10%; animation-delay: 0s; animation-duration: 12s; }
+.heart-2 { left: 20%; animation-delay: 2s; animation-duration: 14s; }
+.heart-3 { left: 30%; animation-delay: 4s; animation-duration: 10s; }
+.heart-4 { left: 40%; animation-delay: 1s; animation-duration: 16s; }
+.heart-5 { left: 50%; animation-delay: 3s; animation-duration: 11s; }
+.heart-6 { left: 60%; animation-delay: 5s; animation-duration: 13s; }
+.heart-7 { left: 70%; animation-delay: 2.5s; animation-duration: 15s; }
+.heart-8 { left: 80%; animation-delay: 4.5s; animation-duration: 9s; }
+.heart-9 { left: 90%; animation-delay: 1.5s; animation-duration: 17s; }
+.heart-10 { left: 15%; animation-delay: 6s; animation-duration: 12s; }
+.heart-11 { left: 75%; animation-delay: 3.5s; animation-duration: 14s; }
+.heart-12 { left: 45%; animation-delay: 5.5s; animation-duration: 10s; }
+
+@keyframes float {
+  0% {
+    transform: translateY(100vh) rotate(0deg);
+    opacity: 0;
+  }
+  10% {
+    opacity: 0.3;
+  }
+  90% {
+    opacity: 0.3;
+  }
+  100% {
+    transform: translateY(-100px) rotate(360deg);
+    opacity: 0;
+  }
+}
+
+/* Celebration Hearts Animation */
+.celebration-hearts {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.celebration-heart {
+  position: absolute;
+  animation: celebrate 3s infinite ease-out;
+}
+
+.celebration-heart.heart-1 { left: 10%; animation-delay: 0s; }
+.celebration-heart.heart-2 { left: 15%; animation-delay: 0.2s; }
+.celebration-heart.heart-3 { left: 25%; animation-delay: 0.4s; }
+.celebration-heart.heart-4 { left: 35%; animation-delay: 0.1s; }
+.celebration-heart.heart-5 { left: 45%; animation-delay: 0.6s; }
+.celebration-heart.heart-6 { left: 55%; animation-delay: 0.3s; }
+.celebration-heart.heart-7 { left: 65%; animation-delay: 0.8s; }
+.celebration-heart.heart-8 { left: 75%; animation-delay: 0.5s; }
+.celebration-heart.heart-9 { left: 85%; animation-delay: 0.7s; }
+.celebration-heart.heart-10 { left: 20%; animation-delay: 0.9s; }
+.celebration-heart.heart-11 { left: 30%; animation-delay: 1.1s; }
+.celebration-heart.heart-12 { left: 40%; animation-delay: 1.3s; }
+.celebration-heart.heart-13 { left: 50%; animation-delay: 1.5s; }
+.celebration-heart.heart-14 { left: 60%; animation-delay: 1.7s; }
+.celebration-heart.heart-15 { left: 70%; animation-delay: 1.9s; }
+.celebration-heart.heart-16 { left: 80%; animation-delay: 2.1s; }
+.celebration-heart.heart-17 { left: 90%; animation-delay: 2.3s; }
+.celebration-heart.heart-18 { left: 5%; animation-delay: 2.5s; }
+.celebration-heart.heart-19 { left: 95%; animation-delay: 2.7s; }
+.celebration-heart.heart-20 { left: 50%; animation-delay: 2.9s; }
+
+@keyframes celebrate {
+  0% {
+    transform: translateY(100vh) scale(0) rotate(0deg);
+    opacity: 1;
+  }
+  50% {
+    transform: translateY(50vh) scale(1) rotate(180deg);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-10vh) scale(0.5) rotate(360deg);
+    opacity: 0;
+  }
+}
+
+/* Success Animation */
+.success-animation {
+  animation: successFadeIn 1s ease-out;
+}
+
+@keyframes successFadeIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.8) translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+/* Button Hover Effects */
+button {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+button:active {
+  transform: translateY(0);
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(to bottom, #ff69b4, #dda0dd);
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(to bottom, #ff1493, #ba55d3);
+}
+
+/* Gradient Text Animation */
+.bg-clip-text {
+  background-size: 200% 200%;
+  animation: gradientMove 3s ease infinite;
+}
+
+@keyframes gradientMove {
+  0%, 100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+/* Enhanced Glass Morphism */
+.backdrop-blur-sm {
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+/* Pulse Animation for Hearts */
+@keyframes heartPulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+}
+
+.animate-pulse {
+  animation: heartPulse 2s infinite;
+}
+
+/* Bounce Animation Enhancement */
+@keyframes bounce {
+  0%, 20%, 53%, 80%, 100% {
+    animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
+    transform: translate3d(0,0,0);
+  }
+  40%, 43% {
+    animation-timing-function: cubic-bezier(0.755, 0.050, 0.855, 0.060);
+    transform: translate3d(0, -30px, 0);
+  }
+  70% {
+    animation-timing-function: cubic-bezier(0.755, 0.050, 0.855, 0.060);
+    transform: translate3d(0, -15px, 0);
+  }
+  90% {
+    transform: translate3d(0,-4px,0);
+  }
+}
+
+.animate-bounce {
+  animation: bounce 1s infinite;
+}
+
+/* Game-specific floating hearts */
+.game-floating-hearts {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.game-floating-heart {
+  position: absolute;
+  animation: gameFloat 8s infinite linear;
+  opacity: 0.3;
+}
+
+.heart-game-bg-1 { left: 10%; animation-delay: 0s; animation-duration: 8s; }
+.heart-game-bg-2 { left: 20%; animation-delay: 1s; animation-duration: 9s; }
+.heart-game-bg-3 { left: 30%; animation-delay: 2s; animation-duration: 7s; }
+.heart-game-bg-4 { left: 40%; animation-delay: 0.5s; animation-duration: 10s; }
+.heart-game-bg-5 { left: 60%; animation-delay: 1.5s; animation-duration: 8s; }
+.heart-game-bg-6 { left: 70%; animation-delay: 2.5s; animation-duration: 9s; }
+.heart-game-bg-7 { left: 80%; animation-delay: 3s; animation-duration: 7s; }
+.heart-game-bg-8 { left: 90%; animation-delay: 3.5s; animation-duration: 8s; }
+
+@keyframes gameFloat {
+  0% {
+    transform: translateY(100%) rotate(0deg);
+    opacity: 0;
+  }
+  10% {
+    opacity: 0.3;
+  }
+  90% {
+    opacity: 0.3;
+  }
+  100% {
+    transform: translateY(-20px) rotate(360deg);
+    opacity: 0;
+  }
+}
+
+/* Game celebration hearts */
+.celebration-hearts-game {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.celebration-heart-game {
+  position: absolute;
+  animation: gameCelebrate 2s infinite ease-out;
+}
+
+.heart-game-1 { left: 10%; animation-delay: 0s; }
+.heart-game-2 { left: 20%; animation-delay: 0.2s; }
+.heart-game-3 { left: 30%; animation-delay: 0.4s; }
+.heart-game-4 { left: 40%; animation-delay: 0.1s; }
+.heart-game-5 { left: 50%; animation-delay: 0.6s; }
+.heart-game-6 { left: 60%; animation-delay: 0.3s; }
+.heart-game-7 { left: 70%; animation-delay: 0.8s; }
+.heart-game-8 { left: 80%; animation-delay: 0.5s; }
+.heart-game-9 { left: 90%; animation-delay: 0.7s; }
+.heart-game-10 { left: 15%; animation-delay: 0.9s; }
+.heart-game-11 { left: 25%; animation-delay: 1.1s; }
+.heart-game-12 { left: 35%; animation-delay: 1.3s; }
+.heart-game-13 { left: 45%; animation-delay: 1.5s; }
+.heart-game-14 { left: 55%; animation-delay: 1.7s; }
+.heart-game-15 { left: 65%; animation-delay: 1.9s; }
+
+@keyframes gameCelebrate {
+  0% {
+    transform: translateY(100%) scale(0) rotate(0deg);
+    opacity: 1;
+  }
+  50% {
+    transform: translateY(50%) scale(1) rotate(180deg);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-10%) scale(0.5) rotate(360deg);
+    opacity: 0;
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .floating-heart {
+    display: none;
+  }
+  
+  .celebration-heart {
+    display: block;
+  }
+  
+  .text-4xl {
+    font-size: 2rem;
+  }
+  
+  .text-6xl {
+    font-size: 3rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .text-3xl {
+    font-size: 1.5rem;
+  }
+  
+  .text-2xl {
+    font-size: 1.25rem;
+  }
+}
+
+/* Focus States for Accessibility */
+button:focus,
+button:focus-visible {
+  outline: 3px solid #ff69b4;
+  outline-offset: 2px;
+}
+
+/* Loading Animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-in {
+  animation: fadeIn 0.6s ease-out;
+}
+
+/* Button Scale Animation */
+.scale-animation {
+  transition: transform 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+/* Shake Animation for NO button when clicked multiple times */
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  10%, 30%, 50%, 70%, 90% { transform: translateX(-5px); }
+  20%, 40%, 60%, 80% { transform: translateX(5px); }
+}
+
+.shake {
+  animation: shake 0.5s ease-in-out;
+}
+
+/* Glow Effect for YES button */
+.glow {
+  box-shadow: 0 0 20px rgba(34, 197, 94, 0.5);
+}
+
+/* Text Shadow for Better Readability */
+.text-shadow {
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+}
