@@ -10,11 +10,11 @@ const App: React.FC = () => {
 
   // Sample images - replace with actual image URLs
   const images = [
-    "src/Images/Cute(1).jpg",
-    "src/Images/Kamar.jpg",
-    "src/Images/Rainy [hoto.jpg",
-    "src/Images/Saaree(1).jpg",
-    "src/Images/School.jpg"
+    "public/Images/Cute(1).jpg",
+    "public/Images/Kamar.jpg",
+    "public/Images/Rainy [hoto.jpg",
+    "public/Images/Saaree(1).jpg",
+    "public/Images/School.jpg"
   ];
 
   // Love messages
